@@ -1,5 +1,5 @@
 import { HttpException, Injectable } from '@nestjs/common';
-import { UsuarioPersistencia } from '../modelos/usuario';
+import { UsuarioPersistencia } from '@monorepo.seminario/modelos';
 import { UsuarioService } from '../servicios/usuario.service';
 
 @Injectable()

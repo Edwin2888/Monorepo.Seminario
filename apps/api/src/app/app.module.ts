@@ -4,10 +4,10 @@ import { environment } from '../environments/environment';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { USUARIOS_MODEL_DEFINITION } from '../usuario/esquemas/usuario.esquema';
-import { UsuariosController } from '../usuario/controllers/usuario.controller';
-import { UsuarioService } from '../usuario/servicios/usuario.service';
-import { UsuarioAplicacion } from '../usuario/aplicaciones/usuario.aplication';
+import { USUARIOS_MODEL_DEFINITION } from './usuario/esquemas/usuario.esquema';
+import { UsuariosController } from './usuario/controllers/usuario.controller';
+import { UsuarioService } from './usuario/servicios/usuario.service';
+import { UsuarioAplicacion } from './usuario/aplicaciones/usuario.aplication';
 
 @Module({
   imports: [

@@ -1,6 +1,6 @@
 import { Controller, Get, Put, Post, Query, Param } from '@nestjs/common';
 import { UsuarioAplicacion } from '../aplicaciones/usuario.aplication';
-import { UsuarioPersistencia } from '../modelos/usuario';
+import { UsuarioPersistencia } from '@monorepo.seminario/modelos';
 
 @Controller('usuarios')
 export class UsuariosController {

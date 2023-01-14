@@ -1,14 +1,17 @@
 import { HttpException } from "@nestjs/common";
 
-interface UsuarioPersistenciaProps {
-    _id: string;
+export interface Usuario {
     cedula: string;
     nombres: string;
     apellidos: string;
     telefono: number;
-    horas: number;
-    valorHora: number;
-    fechaRegistro: Date;
+    horas?: number;
+    valorHora?: number;
+    fechaRegistro?: Date;
+}
+
+export interface UsuarioPersistenciaProps extends Usuario {
+    _id?: string;
 }
 
 export class UsuarioPersistencia 
@@ -19,14 +22,14 @@ export class UsuarioPersistencia
     static readonly APELLIDO_REQUERIDO = 'El apellido es requerido';
     static readonly TELEFONO_REQUERIDO = 'El telefono es requerido';
 
-    readonly _id: string;
+    readonly _id?: string;
     readonly cedula: string;
     readonly nombres: string;
     readonly apellidos: string;
     readonly telefono: number;
-    readonly horas: number;
-    readonly valorHora: number;
-    readonly fechaRegistro: Date;
+    readonly horas?: number;
+    readonly valorHora?: number;
+    readonly fechaRegistro?: Date;
 
     constructor(data: Partial<UsuarioPersistenciaProps>){
         if(!data.cedula){

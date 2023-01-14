@@ -1,0 +1,25 @@
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Cedula</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Telefono</th>
+            <th>Editar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios$ | async">
+            <td>{{usuario.cedula}}</td>
+            <td>{{usuario.nombres}}</td>
+            <td>{{usuario.apellidos}}</td>
+            <td>{{usuario.telefono}}</td>
+            <td>
+              <button class="btn btn-primary">
+                <i class="fa fa-edit"></i>
+              </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

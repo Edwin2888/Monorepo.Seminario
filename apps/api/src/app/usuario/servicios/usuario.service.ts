@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { USUARIOS_MODEL_NAME } from "../esquemas/usuario.esquema";
-import { UsuarioPersistencia } from '../modelos/usuario';
+import { UsuarioPersistencia } from '@monorepo.seminario/modelos';
 
 @Injectable()
 export class UsuarioService {

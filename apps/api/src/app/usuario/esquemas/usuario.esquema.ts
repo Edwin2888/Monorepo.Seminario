@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { ModelDefinition } from '@nestjs/mongoose';
-import { UsuarioPersistencia } from '../modelos/usuario';
+import { UsuarioPersistencia } from '@monorepo.seminario/modelos';
 
 export const UsuarioSchema = new Schema<UsuarioPersistencia>({
     cedula: {
