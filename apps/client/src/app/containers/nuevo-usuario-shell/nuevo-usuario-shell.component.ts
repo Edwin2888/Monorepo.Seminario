@@ -30,7 +30,7 @@ export class NuevoUsuarioShellComponent implements OnInit {
       nombres: new FormControl(this.userEdit?.nombres),
       apellidos: new FormControl(this.userEdit?.apellidos),
       telefono: new FormControl(this.userEdit?.telefono),
-      horas: new FormControl(this.userEdit?.horas),
+      horas: new FormControl(this.userEdit?.horas), 
       valorHora: new FormControl(this.userEdit?.valorHora),
     });
   }

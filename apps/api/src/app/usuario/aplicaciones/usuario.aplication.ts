@@ -48,4 +48,8 @@ export class UsuarioAplicacion {
             );
         return usuario;
     }
+
+    async eliminarUsuario(id: string){
+        return this.usuarioService.eliminarUsuario(id);
+    }
 }

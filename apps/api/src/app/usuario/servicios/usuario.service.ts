@@ -25,6 +25,10 @@ export class UsuarioService {
     .lean();
   }
 
+  async eliminarUsuario(_id: string): Promise<any>{
+    return await this.usuarios.deleteOne({_id});
+  }
+
   async obtenerPorId(_id: string): Promise<UsuarioPersistencia>{
     const data = await this.usuarios.findOne({ _id, }).lean();
     return (data && new UsuarioPersistencia(data));

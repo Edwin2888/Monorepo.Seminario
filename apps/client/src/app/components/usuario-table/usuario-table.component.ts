@@ -17,7 +17,6 @@ export class UsuarioTableComponent {
   editUser: boolean = false;
   userSelect? : UsuarioPersistenciaProps;
 
-
   obtenerUsuarios(){
     this.usuarios$ = this.service.obtenerUsuarios();
   }
@@ -28,6 +27,12 @@ export class UsuarioTableComponent {
    this.userSelect = oUser;
 
   }
+
+  onDelete(id: string | undefined) {
+    console.log(id);
+    this.service.deleteUsuario(id).subscribe(t => this.obtenerUsuarios());
+  }
+
 
   salirEdit(event: boolean){
     this.editUser = event;

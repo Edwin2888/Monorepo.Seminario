@@ -22,4 +22,9 @@ export class UsuarioService {
   editarUsuario(id: string | undefined ,usuario: UsuarioPersistencia){
     return this.http.put<UsuarioPersistencia>(`${apiUrl.editarUsuario}/${id}/editar`,usuario);
   }
+
+  deleteUsuario(id: string | undefined ){
+    return this.http.delete<UsuarioPersistencia>(`${apiUrl.deleteUsuario}/${id}/delete`);
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Controller, Get, Put, Post, Query, Param, Body } from '@nestjs/common';
+import { Controller, Get, Put, Post, Query, Param, Body, Delete } from '@nestjs/common';
 import { UsuarioAplicacion } from '../aplicaciones/usuario.aplication';
 import { UsuarioPersistencia } from '@monorepo.seminario/modelos';
 
@@ -24,5 +24,12 @@ export class UsuariosController {
         @Body() usuario: UsuarioPersistencia
     ): Promise<UsuarioPersistencia> {
         return await this.aplicacion.editarUsuario(usuario,id);
+    }
+
+    @Delete(':id/delete')
+    async eliminarUsuario(
+        @Param('id') id: string
+    ): Promise<any> {
+        return await this.aplicacion.eliminarUsuario(id);
     }
 }
