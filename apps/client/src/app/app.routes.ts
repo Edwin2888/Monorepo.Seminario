@@ -10,5 +10,9 @@ export const appRoutes: Route[] = [
     {
         path: 'usuarios/nuevo',
         component: NuevoUsuarioShellComponent
+    },
+    {
+        path: 'usuarios/nuevo/{id}',
+        component: NuevoUsuarioShellComponent
     }
 ];

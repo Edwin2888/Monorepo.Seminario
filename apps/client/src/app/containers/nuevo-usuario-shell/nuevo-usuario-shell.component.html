@@ -11,7 +11,7 @@
         </div>
         
         <div class="card-body">
-            <form [formGroup]="formGroup">
+            <form [formGroup]="newUser">
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Cedula</label>
                     <input type="text" class="form-control" formControlName="cedula" id="formGroupExampleInput" placeholder="No. CC...">
@@ -22,21 +22,21 @@
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido...">
+                    <input type="text" class="form-control" formControlName="apellido" id="formGroupExampleInput2" placeholder="Apellido...">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Telefono...">
+                    <input type="text" class="form-control" formControlName="telefono" id="formGroupExampleInput2" placeholder="Telefono...">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Horas</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Horas...">
+                    <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="hora" placeholder="Horas...">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Valor Horas</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Valor Horas...">
+                    <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="valorHora" placeholder="Valor Horas...">
                 </div>  
-                <button type="button" [routerLink]="['/']" class="btn btn-success">Guardar</button>
+                <button type="button" [routerLink]="['/']" (click)="guardarUsuario()" class="btn btn-success">Guardar</button>
                 <button style="margin-left: 1rem;"  type="button" class="btn btn-danger">Limpiar</button> 
             </form>
         </div>

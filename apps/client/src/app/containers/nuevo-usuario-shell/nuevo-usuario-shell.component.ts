@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { UsuarioService } from '../../usuario.service';
 
 @Component({
@@ -10,11 +10,16 @@ import { UsuarioService } from '../../usuario.service';
 export class NuevoUsuarioShellComponent {
   constructor(private service: UsuarioService, private formBuilder: FormBuilder){}
 
-  formGroup: FormGroup = new FormGroup({
-    cedula: {required}
+  newUser: FormGroup = new FormGroup({
+    cedula: new FormControl(''),
+    nombre: new FormControl(''),
+    apellido: new FormControl(''),
+    telefono: new FormControl(''),
+    hora: new FormControl(''),
+    valorHora: new FormControl(''),
   });
 
   guardarUsuario(){
-    this.service.guardarUsuario(this.formGroup.value);
+    this.service.guardarUsuario(this.newUser.value);
   }
 }
