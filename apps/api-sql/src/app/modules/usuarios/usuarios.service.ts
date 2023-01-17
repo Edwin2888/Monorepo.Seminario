@@ -19,11 +19,11 @@ export class UsuariosService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} usuario`;
+    return this.userRepository.findOneBy({id});
   }
 
   update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
-    return `This action updates a #${id} usuario`;
+    return this.userRepository.update(updateUsuarioDto, {id});
   }
 
   remove(id: number) {
