@@ -7,7 +7,7 @@ import {
 
 export class Usuario extends BaseEntity {
     @PrimaryGeneratedColumn('increment')
-    _id: number;
+    id: number;
 
     @Column({ type: 'varchar', length: 50 })
     cedula: string;

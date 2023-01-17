@@ -18,11 +18,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" formControlName="nombre" id="formGroupExampleInput2" placeholder="Nombre...">
+                    <input type="text" class="form-control" formControlName="nombres" id="formGroupExampleInput2" placeholder="Nombre...">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" formControlName="apellido" id="formGroupExampleInput2" placeholder="Apellido...">
+                    <input type="text" class="form-control" formControlName="apellidos" id="formGroupExampleInput2" placeholder="Apellido...">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Telefono</label>
@@ -36,7 +36,7 @@
                     <label for="formGroupExampleInput2" class="form-label">Valor Horas</label>
                     <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="valorHora" placeholder="Valor Horas...">
                 </div>  
-                <button type="button" [routerLink]="['/']" (click)="guardarUsuario()" class="btn btn-success">Guardar</button>
+                <button type="button" (click)="guardarUsuario()" class="btn btn-success">Guardar</button>
                 <button style="margin-left: 1rem;"  type="button" class="btn btn-danger">Limpiar</button> 
             </form>
         </div>

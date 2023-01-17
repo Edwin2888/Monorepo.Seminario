@@ -15,7 +15,7 @@ export class UsuarioService {
     return this.http.get<UsuarioPersistencia[]>(apiUrl.obtenerUsuarios);
   }
 
-  guardarUsuario(usuario: UsuarioPersistencia): Observable<UsuarioPersistencia>{
+  guardarUsuario(usuario: UsuarioPersistencia){
     return this.http.post<UsuarioPersistencia>(apiUrl.nuevoUsuarios, usuario);
   }
 }

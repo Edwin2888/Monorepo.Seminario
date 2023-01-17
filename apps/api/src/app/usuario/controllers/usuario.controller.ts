@@ -1,4 +1,4 @@
-import { Controller, Get, Put, Post, Query, Param } from '@nestjs/common';
+import { Controller, Get, Put, Post, Query, Param, Body } from '@nestjs/common';
 import { UsuarioAplicacion } from '../aplicaciones/usuario.aplication';
 import { UsuarioPersistencia } from '@monorepo.seminario/modelos';
 
@@ -13,7 +13,7 @@ export class UsuariosController {
 
     @Post()
     async guardarUsuario(
-        @Query() usuario: UsuarioPersistencia
+        @Body() usuario: UsuarioPersistencia
     ): Promise<UsuarioPersistencia> {
         return await this.aplicacion.crearUsuario(usuario);
     }

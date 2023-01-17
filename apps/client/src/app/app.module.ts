@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { UsuariosShellComponent } from './containers/usuarios-shell/usuarios-shell.component';
 import { NuevoUsuarioShellComponent } from './containers/nuevo-usuario-shell/nuevo-usuario-shell.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,6 +24,6 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(appRoutes), FormsModule],
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule],
 })
 export class AppModule {}

@@ -1,28 +1,19 @@
-import { Controller, Get, Put, Post, Query, Param } from '@nestjs/common';
-import { UsuarioAplicacion } from '../aplicaciones/usuario.aplication';
-import { UsuarioPersistencia } from '@monorepo.seminario/modelos';
+import { Controller, Get, Post, UsePipes, ValidationPipe, Body } from '@nestjs/common';
+import { UsuarioService } from '../servicios/usuario.service';
+import { CreateUsuarioDto } from '../dto/create-usuario.dto';
 
-@Controller('usuarios')
+@Controller('users')
 export class UsuariosController {
-    constructor(private aplicacion: UsuarioAplicacion) {}
+    constructor(private service: UsuarioService) {}
 
     @Get()
-    async obtenerTodosLosUsuarios(): Promise<UsuarioPersistencia[]> {
-        return await this.aplicacion.obtenerTodosLosUsuarios();
+    getUsers() {
+        return this.service.getUsers();
     }
 
-    @Post()
-    async guardarUsuario(
-        @Query() usuario: UsuarioPersistencia
-    ): Promise<UsuarioPersistencia> {
-        return await this.aplicacion.crearUsuario(usuario);
-    }
-
-    @Put(':id/editar')
-    async actualizarUsuario(
-        @Param('id') id: string,
-        @Query() usuario: UsuarioPersistencia
-    ): Promise<UsuarioPersistencia> {
-        return await this.aplicacion.editarUsuario(usuario,id);
+    @Post('create')
+    @UsePipes(ValidationPipe)
+    createUsers(@Body() createUserDto: CreateUsuarioDto) {
+        return this.service.createUser(createUserDto);
     }
 }
