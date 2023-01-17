@@ -1,10 +1,43 @@
 <div class="container mt-5">
     <div class="card">
-        <div class="card-header text-center">
-            <h5>Nuevo usuario</h5>
-        </div>
-        <div class="card-body">
 
+        <div class="mb-12">
+            <div class="text-left mb-6">
+                <button [routerLink]="['/']" type="button" class="btn btn-outline-primary" >Salir</button>
+            </div>
+            <div class="card-header text-center mb-6">
+                <h5>Nuevo usuario</h5>
+            </div>
         </div>
+        
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Cedula</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="No. CC...">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nombre...">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido...">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Telefono</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Telefono...">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Horas</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Horas...">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Valor Horas</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Valor Horas...">
+            </div>  
+            <button type="button" [routerLink]="['/']" class="btn btn-success">Guardar</button>
+            <button style="margin-left: 1rem;"  type="button" class="btn btn-danger">Limpiar</button> 
+        </div>
+          
     </div>
 </div>
