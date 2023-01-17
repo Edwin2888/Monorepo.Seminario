@@ -21,7 +21,7 @@ export class UsuariosController {
     @Put(':id/editar')
     async actualizarUsuario(
         @Param('id') id: string,
-        @Query() usuario: UsuarioPersistencia
+        @Body() usuario: UsuarioPersistencia
     ): Promise<UsuarioPersistencia> {
         return await this.aplicacion.editarUsuario(usuario,id);
     }

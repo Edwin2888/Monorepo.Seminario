@@ -3,10 +3,10 @@
 
         <div class="mb-12">
             <div class="text-left mb-6">
-                <button [routerLink]="['/']" type="button" class="btn btn-outline-primary" >Salir</button>
+                <button (click)="salir()" type="button" class="btn btn-outline-primary" >Salir</button>
             </div>
             <div class="card-header text-center mb-6">
-                <h5>Nuevo usuario</h5>
+                <h5>{{titulo}} Usuario</h5>
             </div>
         </div>
         
@@ -30,13 +30,13 @@
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Horas</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="hora" placeholder="Horas...">
+                    <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="horas" placeholder="Horas...">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Valor Horas</label>
                     <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="valorHora" placeholder="Valor Horas...">
                 </div>  
-                <button type="button" (click)="guardarUsuario()" class="btn btn-success">Guardar</button>
+                <button type="button" (click)="guardarUsuario()" class="btn btn-success">{{titulo}}</button>
                 <button style="margin-left: 1rem;"  type="button" class="btn btn-danger">Limpiar</button> 
             </form>
         </div>

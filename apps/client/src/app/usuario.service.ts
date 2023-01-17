@@ -18,4 +18,8 @@ export class UsuarioService {
   guardarUsuario(usuario: UsuarioPersistencia){
     return this.http.post<UsuarioPersistencia>(apiUrl.nuevoUsuarios, usuario);
   }
+
+  editarUsuario(id: string | undefined ,usuario: UsuarioPersistencia){
+    return this.http.put<UsuarioPersistencia>(`${apiUrl.editarUsuario}/${id}/editar`,usuario);
+  }
 }

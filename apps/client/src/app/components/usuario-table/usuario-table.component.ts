@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UsuarioService } from '../../usuario.service';
 import { Observable } from 'rxjs';
 import { Usuarios } from '../../interfaces/usuario';
+import { UsuarioPersistenciaProps } from '@monorepo.seminario/modelos';
 
 @Component({
   selector: 'app-usuario-table',
@@ -13,8 +14,22 @@ export class UsuarioTableComponent {
     this.obtenerUsuarios();
   }
   usuarios$!: Observable<Usuarios>;
+  editUser: boolean = false;
+  userSelect? : UsuarioPersistenciaProps;
+
 
   obtenerUsuarios(){
     this.usuarios$ = this.service.obtenerUsuarios();
   }
+
+  onEdit ( oUser: UsuarioPersistenciaProps ) {
+   console.log(oUser);
+   this.editUser = true;
+   this.userSelect = oUser;
+
+  }
+
+  salirEdit(event: boolean){
+    this.editUser = event;
+  }  
 }

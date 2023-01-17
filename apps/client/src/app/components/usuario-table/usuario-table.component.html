@@ -1,25 +1,44 @@
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Cedula</th>
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Telefono</th>
-            <th>Editar</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let usuario of usuarios$ | async">
-            <td>{{usuario.cedula}}</td>
-            <td>{{usuario.nombres}}</td>
-            <td>{{usuario.apellidos}}</td>
-            <td>{{usuario.telefono}}</td>
-            <td>
-              <button class="btn btn-primary">
-                <i class="fa fa-edit"></i>
-              </button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div *ngIf="!editUser;else divEditar">
+    <h2>Listado de usuarios</h2>
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Cedula</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Telefono</th>
+                        <th>Hora</th>
+                        <th>Valor Hora</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of usuarios$ | async">
+                        <td>{{usuario.cedula}}</td>
+                        <td>{{usuario.nombres}}</td>
+                        <td>{{usuario.apellidos}}</td>
+                        <td>{{usuario.telefono}}</td>
+                        <td>{{usuario.horas}}</td>
+                        <td>{{usuario.valorHora}}</td>
+                        <td>
+                          <button class="btn btn-primary" (click)="onEdit(usuario)">
+                            <i class="fa fa-edit"></i>
+                          </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger">
+                              <i class="fa fa-trash"></i>
+                            </button>
+                          </td>
+                    </tr>
+                </tbody>
+            </table>  
+        </div>
+    </div>
+</div>
+<ng-template #divEditar>
+    <app-nuevo-usuario-shell [userEdit]="userSelect" titulo="Editar" (EmitterSalir)="salirEdit($event)"></app-nuevo-usuario-shell>
+</ng-template>
