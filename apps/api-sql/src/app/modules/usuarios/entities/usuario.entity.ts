@@ -2,9 +2,11 @@ import {
     BaseEntity,
     Column,
     CreateDateColumn,
+    Entity,
     PrimaryGeneratedColumn
 } from "typeorm";
 
+@Entity()
 export class Usuario extends BaseEntity {
     @PrimaryGeneratedColumn('increment')
     id: number;
@@ -21,12 +23,12 @@ export class Usuario extends BaseEntity {
     @Column({ type: 'bigint' })
     telefono: number;
 
-    @Column({ type: 'int' })
+    @Column({ type: 'int', nullable: true })
     horas: number;
 
-    @Column({ type: 'int' })
+    @Column({ type: 'int', nullable: true })
     valorHora: number;
 
-    @CreateDateColumn({ type: 'timestamp', name: 'fecha_registro' })
+    @CreateDateColumn({ type: 'timestamp', name: 'fecha_registro', nullable: true })
     createdAt: Date;
 }

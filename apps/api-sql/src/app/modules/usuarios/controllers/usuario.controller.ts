@@ -2,7 +2,7 @@ import { Controller, Get, Post, UsePipes, ValidationPipe, Body } from '@nestjs/c
 import { UsuarioService } from '../servicios/usuario.service';
 import { CreateUsuarioDto } from '../dto/create-usuario.dto';
 
-@Controller('users')
+@Controller('usuarios')
 export class UsuariosController {
     constructor(private service: UsuarioService) {}
 
@@ -11,9 +11,5 @@ export class UsuariosController {
         return this.service.getUsers();
     }
 
-    @Post('create')
-    @UsePipes(ValidationPipe)
-    createUsers(@Body() createUserDto: CreateUsuarioDto) {
-        return this.service.createUser(createUserDto);
-    }
+    
 }
