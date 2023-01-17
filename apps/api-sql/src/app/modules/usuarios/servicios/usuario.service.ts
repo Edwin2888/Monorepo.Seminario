@@ -15,8 +15,8 @@ export class UsuarioService {
     return this.userRepository.save(newUser);
   }
       
-  findUsersById(id: number) {
-    return this.userRepository.findOneBy({id});
+  findUsersById(_id: number) {
+    return this.userRepository.findOneBy({_id});
   }
 
   getUsers() {

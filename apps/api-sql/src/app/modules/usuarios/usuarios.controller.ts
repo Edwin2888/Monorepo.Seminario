@@ -31,11 +31,11 @@ export class UsuariosController {
   }
 
   @Put(':id/editar')
-  update(@Param('id') id: number, @Body() updateUsuarioDto: UpdateUsuarioDto) {
+  update(@Param('id') id: string, @Body() updateUsuarioDto: UpdateUsuarioDto) {
     return this.usuariosService.update(+id, updateUsuarioDto);
   }
 
-  @Delete(':id')
+  @Delete(':id/delete')
   remove(@Param('id') id: string) {
     return this.usuariosService.remove(+id);
   }

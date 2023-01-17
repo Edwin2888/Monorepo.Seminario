@@ -9,7 +9,7 @@ import {
 @Entity()
 export class Usuario extends BaseEntity {
     @PrimaryGeneratedColumn('increment')
-    id: number;
+    _id: number;
 
     @Column({ type: 'varchar', length: 50 })
     cedula: string;
