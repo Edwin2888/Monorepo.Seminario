@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { UsuariosShellComponent } from './containers/usuarios-shell/usuarios-shell.component';
 import { NuevoUsuarioShellComponent } from './containers/nuevo-usuario-shell/nuevo-usuario-shell.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +24,6 @@ import { NuevoUsuarioShellComponent } from './containers/nuevo-usuario-shell/nue
   ],
   providers: [],
   bootstrap: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(appRoutes), FormsModule],
 })
 export class AppModule {}

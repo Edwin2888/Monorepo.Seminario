@@ -11,32 +11,34 @@
         </div>
         
         <div class="card-body">
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Cedula</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="No. CC...">
-            </div>
-            <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nombre...">
-            </div>
-            <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido...">
-            </div>
-            <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Telefono</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Telefono...">
-            </div>
-            <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Horas</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Horas...">
-            </div>
-            <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Valor Horas</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Valor Horas...">
-            </div>  
-            <button type="button" [routerLink]="['/']" class="btn btn-success">Guardar</button>
-            <button style="margin-left: 1rem;"  type="button" class="btn btn-danger">Limpiar</button> 
+            <form [formGroup]="formGroup">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Cedula</label>
+                    <input type="text" class="form-control" formControlName="cedula" id="formGroupExampleInput" placeholder="No. CC...">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" formControlName="nombre" id="formGroupExampleInput2" placeholder="Nombre...">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido...">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Telefono</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Telefono...">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Horas</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Horas...">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Valor Horas</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Valor Horas...">
+                </div>  
+                <button type="button" [routerLink]="['/']" class="btn btn-success">Guardar</button>
+                <button style="margin-left: 1rem;"  type="button" class="btn btn-danger">Limpiar</button> 
+            </form>
         </div>
           
     </div>
